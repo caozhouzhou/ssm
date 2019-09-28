@@ -1,6 +1,7 @@
 package cn.jdwa.service;
 
 import cn.jdwa.domain.Account;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 

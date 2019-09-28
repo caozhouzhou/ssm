@@ -1,9 +1,11 @@
 package cn.jdwa.domain;
 
+import java.io.Serializable;
+
 /**
  * Created by czz on 2019/9/28.
  */
-public class Account {
+public class Account implements Serializable{
     private Integer id;
     private String name;
     private Double money;
