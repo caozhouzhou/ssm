@@ -29,4 +29,20 @@ public class TestMybatis {
         sqlSession.close();
         in.close();
     }
+
+    @Test
+    public void run2() throws Exception{
+        String path = "SqlConfigMap.xml";
+        InputStream in  = Resources.getResourceAsStream(path);
+        SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(in);
+        SqlSession sqlSession = factory.openSession();
+        AccountDao dao = sqlSession.getMapper(AccountDao.class);
+        Account ac = new Account();
+        ac.setName("czz");
+        ac.setMoney(110.90);
+        dao.saveAccount(ac);
+        sqlSession.commit();
+        sqlSession.close();
+        in.close();
+    }
 }
